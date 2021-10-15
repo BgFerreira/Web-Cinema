@@ -4,9 +4,7 @@ import { MyContext } from "../../context/Context.js";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 
-import {StyledInput} from "./StyledInput";
-import { StyledForm } from "./StyledForm";
-import Footer from "../../components/InitialBox/Footer.jsx";
+import { ErrorSpan } from "./StyledForm";
 import Button from "../../components/Button/Button.jsx";
 
 const initialValues = {
@@ -15,8 +13,8 @@ const initialValues = {
 }
 
 const validationSchema = Yup.object({
-    email: Yup.string().required("Required").email("Invalid Input"),
-    password: Yup.string().required("Required")
+    email: Yup.string().required("Email required").email("Input a valid email"),
+    password: Yup.string().required("Password required").min(6, "Too Short")
 })
 
 export default function LoginForm(props) {
@@ -30,7 +28,6 @@ export default function LoginForm(props) {
     }
 
     const onSubmit = values => {
-        console.log("form data", values);
         redirect(values);
     }
 
@@ -43,35 +40,78 @@ export default function LoginForm(props) {
 
             {formik => {
                 return (
-                    <Form className="input-container" >
-                        <div className="form-control">
+                    <Form
+                        className="input-container"
+                        style={{
+                            display: "flex",
+                            flexDirection: "column",
+                            justifyContent: "space-evenly",
+                            alignItems: "center",
+                            height: "100%",
+                            width: "100%"
+                        }}>
+                         
+                        <h1>Login</h1>
 
+                        <div
+                            className="form-control"
+                            style={{
+                                width: "60%",
+                            }}
+                        >
+
+                            <label htmlFor="email">EMAIL: </label>
                             <Field type="email"
-                                placeholder={`email@example.com`}
+                                placeholder={`Enter your email:`}
                                 name="email"
                                 id="email"
+                                style={{
+                                    background: "#eeeeee",
+                                    borderRadius: "20px",
+                                    width: "100%",
+                                    height: "40px",
+                                    border: "solid 2px #c20",
+                                    color: "#111",
+                                    padding: "0 10px",
+                                    fontSize: "18px"
+                                }}
                             />
 
-                            <ErrorMessage name="email">
-                                {errorMsg => <div className="error">{errorMsg}</div>}
+                            <ErrorMessage name="email"
+                                render={msg => <ErrorSpan>{msg}</ErrorSpan>}>
                             </ErrorMessage>
 
                         </div>
 
-                        <div className="form-control">
+                        <div
+                            className="form-control"
+                            style={{
+                                width: "60%"
+                            }}>
 
+                            <label>PASSWORD: </label>
                             <Field type="password"
-                                placeholder={`***`}
+                                placeholder={`Enter your password:`}
                                 name="password"
                                 id="password"
+                                style={{
+                                    background: "#eeeeee",
+                                    borderRadius: "20px",
+                                    width: "100%",
+                                    height: "40px",
+                                    border: "solid 2px #c20",
+                                    color: "#111",
+                                    padding: "0 10px",
+                                    fontSize: "18px",
+                                }}
                             />
 
-                            <ErrorMessage name="password">
-                                {errorMsg => <div className="error">{errorMsg}</div>}
+                            <ErrorMessage name="password"
+                                render={msg => <ErrorSpan>{msg}</ErrorSpan>}>
                             </ErrorMessage>
                         </div>
 
-                        <button type="submit" disabled={!formik.isValid}>ENTRAR</button>
+                        <Button type="submit" disabled={!formik.isValid}>LOGIN</Button>
                     </Form>
                 )
             }}

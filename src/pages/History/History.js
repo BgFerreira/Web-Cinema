@@ -1,7 +1,15 @@
 import React from "react";
 
+import Navbar from "../../components/Navbar/Navbar";
+import { Dashboard } from "../../components/Cards/Home/MovieStyled";
+
 export default function History() {
     return (
-        <h2>History Page</h2>
+        <div>
+            <Navbar />
+            <Dashboard>
+
+            </Dashboard>
+        </div>
     )
 }

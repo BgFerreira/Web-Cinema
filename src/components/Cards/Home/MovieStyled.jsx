@@ -12,8 +12,7 @@ export const Dashboard = styled.div`
     margin-bottom: 50px;
 
     h1 {
-        display: flex;
-        font-size: 2.2vw;
+        font-size: 24px;
     }
 `
 
@@ -47,10 +46,10 @@ export const CardFooter = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    font-size: 0.9vw;
+    font-size: 18px;
 
     p {
-        font-size: 1.2vw;
+        font-size: 16px
     }
 `
 export const StarRate = styled.div`
@@ -66,8 +65,9 @@ export const StarRate = styled.div`
     background-repeat: no-repeat;
     align-items: center;
     justify-content: center;
-    font-size: 1.8vw;
+    font-size: 22px;
     font-weight: bold;
+    color: #161616
 `
 export const Line = styled.div`
     height: 1px;

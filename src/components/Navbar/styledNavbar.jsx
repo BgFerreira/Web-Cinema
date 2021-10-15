@@ -10,7 +10,7 @@ export const StyledNavbar = styled.div`
     height: 80px;
     width: 100%;
     color: #eeeeee;
-    font-size: 1.3vw;
+    font-size: 24px ;
     font-weight: bold;
     align-items: center;
     margin-bottom: 50px;

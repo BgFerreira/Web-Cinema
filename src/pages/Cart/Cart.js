@@ -6,6 +6,7 @@ import Navbar from "../../components/Navbar/Navbar";
 import { Dashboard } from "../../components/Cards/Home/MovieStyled";
 import CartCard from "../../components/Cards/Cart/Cart";
 import Button from "../../components/Button/Button";
+import Acordion from "../../components/Accordion/Acordion";
 
 export default function Cart() {
     const { CartMovie, setAddMovie, setRemoveMovie, setAddHistory, addMovieOnHistory, setCleanMovie } = useContext(MyContext);
@@ -29,7 +30,7 @@ export default function Cart() {
             <div>
                 <Navbar />
                 <Dashboard>
-                    <h3 style={{ fontSize: "1.6vw" }}>There is no movie in your Cart</h3>
+                    <h3 style={{ fontSize: "26px" }}>There is no movie in your Cart</h3>
                 </Dashboard>
             </div>
         )

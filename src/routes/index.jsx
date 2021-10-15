@@ -7,13 +7,7 @@ import { GlobalStyle } from '../components/GlobalStyle/GlobalStyle.jsx';
 
 
 function CustomRoute(props) {
-    const { authenticated, loading } = useContext(MyContext);
-
-    if (loading) {
-        return (
-            <h2>Loading</h2>
-        )
-    }
+    const { authenticated } = useContext(MyContext);
 
     if (props.isPrivate && !authenticated) {
         return (
@@ -36,7 +30,7 @@ function Routes() {
                 })}
                 <Route component={() => {
                     return (
-                        <h1>Erro</h1>
+                        <h1>404: NOT FOUND</h1>
                     )
                 }} />
             </Switch>

@@ -10,7 +10,7 @@ export const StyledCartCard = styled.div`
     cursor:pointer;
     padding: 15px;
     width: 40%;
-    font-size: 1.3vw;
+    font-size: 18px;
 `
 export const DivInfo = styled.div`
     display: flex;

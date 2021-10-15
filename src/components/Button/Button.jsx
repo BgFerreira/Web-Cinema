@@ -1,4 +1,4 @@
-import { ButtonDefault, StyledTrashButton } from "./StyledButton.jsx";
+import { ButtonDefault, StyledTrashButton, StyledAcordionButton } from "./StyledButton.jsx";
 import img from "../../images/trash.png"
 
 export default function Button(props) {
@@ -12,5 +12,13 @@ export function TrashButton(props) {
         <StyledTrashButton {...props}>
             <img src={img} />
         </StyledTrashButton>
+    )
+}
+
+export function AcordionButton(props) {
+    return (
+        <StyledAcordionButton {...props}>
+            {props.children}
+        </StyledAcordionButton>
     )
 }

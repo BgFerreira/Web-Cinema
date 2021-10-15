@@ -33,6 +33,11 @@ export default function Home() {
     return (
         <div>
             <Navbar />
+            <h1
+                style={{
+                    margin: "0 0 40px 40px",
+                    fontSize: "36px"
+                }}>Releases</h1>
             <Dashboard>
                 {!movies ? <></> :
                     (<>

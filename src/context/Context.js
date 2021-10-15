@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { array } from "yup";
-import { string } from "yup/lib/locale";
-import api from "../services/api"
+
 
 export const MyContext = React.createContext({
     id: null,
@@ -19,17 +17,17 @@ export function MyProvider({ children }) {
     
     const myLogin = (data) => { 
         setUser(data);
-        console.log(data)
         setAuthenticated(true);
     };
 
 
     // =========================================== LOGOUT =====================================================
 
-    const handleLogout = async () => {
+    const myLogout = async () => {
         setUser({ email: "", password: "" });
         setMovieOnCart([]);
         setMovieOnHistory([]);
+        setAuthenticated(false);
     }
 
     // =========================================== LOGOUT =====================================================
@@ -101,14 +99,15 @@ export function MyProvider({ children }) {
 
     const addMovieOnHistory = () => {
         const history = localStorage.moviesOnHistory == undefined ? [] : JSON.parse(localStorage.getItem("moviesOnHistory"));
+        const timestamp = Date.now();
 
         let valor = 0;
         CartMovie.forEach(element => {
-            valor = ((parseFloat(element.vote_average) * 5 + 10) + valor).toFixed;
+            valor += Number(parseFloat(element.vote_average) * 10)
         });
 
         history.push({
-            order: Math.random() * 1000000,
+            order: timestamp,
             movies: CartMovie,
             total: valor
         })
@@ -137,8 +136,8 @@ export function MyProvider({ children }) {
                 user: null,
 
                 myLogin,
+                myLogout,
                 user,
-                handleLogout,
                 authenticated,
                 setAuthenticated,
             }}

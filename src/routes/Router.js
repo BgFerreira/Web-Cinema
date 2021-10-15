@@ -1,6 +1,5 @@
 import Login from "../pages/Login/Login.js";
 import Home from "../pages/Home/Home.js";
-import Signup from "../pages/Signup/Signup.js";
 import History from "../pages/History/History.js";
 import Details from "../pages/Details/Details.js";
 import Categories from "../pages/Categories/Categories.js";
@@ -30,14 +29,6 @@ export const routers = [
         path: "/finished",
         isVisible: false,
         isPrivate: true
-    },
-
-    {
-        name: "signup",
-        Component: Signup,
-        path: "/login/signup",
-        isVisible: false,
-        isPrivate: false
     },
     {
         name: "login",
