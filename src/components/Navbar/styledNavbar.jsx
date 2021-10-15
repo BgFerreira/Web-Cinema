@@ -4,7 +4,7 @@ export const StyledNavbar = styled.div`
     position: sticky;
     z-index: 1;
     top: 0;
-    background-color: #323232;
+    background-color: #232323;
     display: flex;
     justify-content: space-evenly;
     height: 80px;
@@ -14,7 +14,6 @@ export const StyledNavbar = styled.div`
     font-weight: bold;
     align-items: center;
     margin-bottom: 50px;
-    border-bottom: 2px solid #111;
 `
 export const NavItem = styled.p`
     cursor: pointer;

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 
 export const MyContext = React.createContext({
@@ -103,7 +103,7 @@ export function MyProvider({ children }) {
 
         let valor = 0;
         CartMovie.forEach(element => {
-            valor += Number(parseFloat(element.vote_average) * 10)
+            valor += Number(parseFloat(element.vote_average) * 10);
         });
 
         history.push({
