@@ -16,6 +16,22 @@ export const Dashboard = styled.div`
     }
 `
 
+export const InverseDashboard = styled.div`
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100%;
+    height: inherit;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 50px;
+
+    h1 {
+        font-size: 24px;
+    }
+`
+
 export const StyledCard = styled.div`
     display: flex;
     position: relative;

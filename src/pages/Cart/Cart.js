@@ -8,7 +8,7 @@ import CartCard from "../../components/Cards/Cart/Cart";
 import Button from "../../components/Button/Button";
 
 export default function Cart() {
-    const { CartMovie, setRemoveMovie, addMovieOnHistory, moviesOnHistory } = useContext(MyContext);
+    const { CartMovie, setRemoveMovie, addMovieOnHistory } = useContext(MyContext);
     const [total, setTotal] = useState(0);
     const history = useHistory();
 
@@ -25,7 +25,6 @@ export default function Cart() {
         }
 
         addMovieOnHistory(order);
-        console.log(moviesOnHistory)
         history.push("/finished");
     }
 

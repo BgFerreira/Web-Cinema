@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { MyContext } from "../../context/Context";
 
 import Navbar from "../../components/Navbar/Navbar";
-import { Dashboard } from "../../components/Cards/Home/MovieStyled";
+import { InverseDashboard } from "../../components/Cards/Home/MovieStyled";
 import Acordion from "../../components/Accordion/Acordion";
 
 export default function History() {
@@ -16,7 +16,7 @@ export default function History() {
             ${((orderTime.getDate() < 10 ? `0${orderTime.getDate()}` : `${orderTime.getDate()}`))} /
             ${((orderTime.getMonth() + 1 < 10 ? `0${orderTime.getMonth() + 1}` : `${orderTime.getMonth() + 1}`))} /
             ${orderTime.getFullYear()} - 
-            ${((orderTime.getHours() < 10 ? `0${orderTime.getUTCHours()}` : `${orderTime.getUTCHours()}`))} :
+            ${((orderTime.getHours() < 10 ? `0${orderTime.getHours()}` : `${orderTime.getHours()}`))} :
             ${((orderTime.getMinutes() < 10 ? `0${orderTime.getMinutes()}` : `${orderTime.getMinutes()}`))} :
             ${((orderTime.getSeconds() < 10 ? `0${orderTime.getSeconds()}` : `${orderTime.getSeconds()}`))}
         `
@@ -27,9 +27,9 @@ export default function History() {
         return (
             <div>
                 <Navbar />
-                <Dashboard>
+                <InverseDashboard>
                     <h3 style={{ fontSize: "28px" }}>You didn't make any order</h3>
-                </Dashboard>
+                </InverseDashboard>
             </div>
         )
     }
@@ -37,7 +37,7 @@ export default function History() {
     return (
         <div>
             <Navbar />
-            <Dashboard>
+            <InverseDashboard>
                 {
                     moviesOnHistory.map((element) => {
                         return (
@@ -45,7 +45,7 @@ export default function History() {
                                 {
                                     element.movies.map((data) => {
                                         return (
-                                           <div>
+                                           <div key={data.id}>
                                                 <span className="movieTitle">{data.title}</span>
                                                 <span className="moviePrice">${data.vote_average * 10},00</span>
                                            </div>
@@ -57,7 +57,7 @@ export default function History() {
                         )
                     })
                 }
-            </Dashboard>
+            </InverseDashboard>
         </div>
     )
 }
