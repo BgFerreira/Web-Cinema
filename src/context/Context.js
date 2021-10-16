@@ -25,6 +25,8 @@ export function MyProvider({ children }) {
 
     const myLogout = async () => {
         setUser({ email: "", password: "" });
+        localStorage.setItem("moviesOnHistory", "[]");
+        localStorage.setItem("CartMovie", "[]");
         setMovieOnCart([]);
         setMovieOnHistory([]);
         setAuthenticated(false);
@@ -48,13 +50,8 @@ export function MyProvider({ children }) {
 
 
     const setRemoveMovie = (movie) => {
-        
-        //const id = Number(movie.target.id);
-        
         setMovieOnCart((prevState) => {
             const moviesFiltred = prevState.filter((element) => element.id !== movie);
-            console.log("Filtro")
-            console.log(moviesFiltred)
             localStorage.setItem("CartMovie", JSON.stringify(moviesFiltred));
             return moviesFiltred;
         });
@@ -71,39 +68,13 @@ export function MyProvider({ children }) {
 
     // =========================================== HISTORY =====================================================
 
-    const setAddHistory = (movie) => {
-        if (movie == []) {
-            return
-        }
-        setMovieOnHistory((prevState) => {
-            return prevState.concat(movie);
-        });
-
-        if (moviesOnHistory.length == 0) {
-            return
-        }
-    };
-
-    const setCleanHistory = (movie) => {
-        if (movie == []) {
-            return
-        }
-
-        setMovieOnHistory([]);
-
-        if (moviesOnHistory.length == 0) {
-            return
-        }
-    }
-
-
     const addMovieOnHistory = () => {
         const history = localStorage.moviesOnHistory == undefined ? [] : JSON.parse(localStorage.getItem("moviesOnHistory"));
         const timestamp = Date.now();
 
         let valor = 0;
         CartMovie.forEach(element => {
-            valor += Number(parseFloat(element.vote_average) * 10);
+            valor += Number(parseFloat(element.vote_average) * 10)
         });
 
         history.push({
@@ -129,8 +100,6 @@ export function MyProvider({ children }) {
                 setCleanMovie,
 
                 moviesOnHistory,
-                setAddHistory,
-                setCleanHistory,
                 addMovieOnHistory,
 
                 user: null,

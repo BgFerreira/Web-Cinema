@@ -1,8 +1,8 @@
-import react from "react";
+import React from "react";
 
 import { BackgroundImg, InfoDiv } from "./StyledDetailsCard";
 import { Flex } from "../../Display/Display.jsx";
-import { Dashboard, StarRate } from "../Home/MovieStyled";
+import { StarRate } from "../Home/MovieStyled";
 import Button from "../../Button/Button.jsx";
 
 const imgURL = "https://image.tmdb.org/t/p/w300";

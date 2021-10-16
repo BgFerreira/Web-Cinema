@@ -16,6 +16,7 @@ export default function Cart() {
 
     const buy = async() => {
         await addMovieOnHistory();
+        
         history.push("/finished");
     }
 
@@ -45,7 +46,7 @@ export default function Cart() {
             <Navbar />
             <Dashboard>
                 <h3 style={{ fontSize: "28px" }}>Total: ${total},00</h3>
-                <Button onClick={buy}> BUY </Button>
+                <Button onClick={() => {buy()}}> BUY </Button>
                 {
                     CartMovie.map((element) => {
                         return (

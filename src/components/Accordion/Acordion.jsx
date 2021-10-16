@@ -1,4 +1,4 @@
-import React, { Children, useState } from "react";
+import React, { useState } from "react";
 import { StyledAcordion, StyledInternal } from "./StyledAcordion";
 import { AcordionButton } from "../Button/Button";
 
@@ -8,10 +8,12 @@ export default function Acordion(props) {
         setOpen(!open);
     }
 
+    const acordionTitle = props.AcordionTitle
+
     return (
         
         <StyledAcordion>
-             <AcordionButton onClick={handleClick}/>
+             <AcordionButton onClick={handleClick}>{acordionTitle}</AcordionButton>
             <StyledInternal open={open}>
                 {props.children}
             </StyledInternal>

@@ -41,8 +41,10 @@ export const StyledTrashButton = styled.button`
     }
 `
 
-export const StyledAcordionButton = styled.button`
-    width: 100%;
+export const StyledAcordionButton = styled.div`
+    display: flex;
+    align-items: center;
+    width: 98%;
     height: 40px;
     cursor: pointer;
     background-color: #cc2200;
@@ -51,6 +53,7 @@ export const StyledAcordionButton = styled.button`
     font-weight: bold;
     border: none;
     border-radius: 10px;
+    padding: 10px;
 
     &:hover {
         background-color: #bb1100;
