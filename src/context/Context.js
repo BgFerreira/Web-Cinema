@@ -17,6 +17,10 @@ export function MyProvider({ children }) {
     
     const myLogin = (data) => { 
         setUser(data);
+        localStorage.setItem("moviesOnHistory", "[]");
+        localStorage.setItem("CartMovie", "[]");
+        setMovieOnCart([]);
+        setMovieOnHistory([]);
         setAuthenticated(true);
     };
 
@@ -50,6 +54,7 @@ export function MyProvider({ children }) {
 
 
     const setRemoveMovie = (movie) => {
+        
         setMovieOnCart((prevState) => {
             const moviesFiltred = prevState.filter((element) => element.id !== movie);
             localStorage.setItem("CartMovie", JSON.stringify(moviesFiltred));
@@ -68,7 +73,12 @@ export function MyProvider({ children }) {
 
     // =========================================== HISTORY =====================================================
 
-    const addMovieOnHistory = () => {
+    const addMovieOnHistory = (movies) => {
+
+        setMovieOnHistory((prevState) => {
+            return prevState.concat(movies);
+        });
+
         const history = localStorage.moviesOnHistory == undefined ? [] : JSON.parse(localStorage.getItem("moviesOnHistory"));
         const timestamp = Date.now();
 

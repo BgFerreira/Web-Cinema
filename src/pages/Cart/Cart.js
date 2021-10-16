@@ -8,15 +8,24 @@ import CartCard from "../../components/Cards/Cart/Cart";
 import Button from "../../components/Button/Button";
 
 export default function Cart() {
-    const { CartMovie, setRemoveMovie, addMovieOnHistory } = useContext(MyContext);
+    const { CartMovie, setRemoveMovie, addMovieOnHistory, moviesOnHistory } = useContext(MyContext);
     const [total, setTotal] = useState(0);
     const history = useHistory();
 
     const removeMovie = (movie) => setRemoveMovie(movie);
 
-    const buy = async() => {
-        await addMovieOnHistory();
-        
+    const buy = () => {
+
+        const timestamp = Date.now();
+
+        const order = {
+            order: timestamp,
+            movies: CartMovie,
+            total: total
+        }
+
+        addMovieOnHistory(order);
+        console.log(moviesOnHistory)
         history.push("/finished");
     }
 
@@ -46,7 +55,7 @@ export default function Cart() {
             <Navbar />
             <Dashboard>
                 <h3 style={{ fontSize: "28px" }}>Total: ${total},00</h3>
-                <Button onClick={() => {buy()}}> BUY </Button>
+                <Button onClick={buy}> BUY </Button>
                 {
                     CartMovie.map((element) => {
                         return (

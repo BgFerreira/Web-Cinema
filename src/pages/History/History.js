@@ -23,7 +23,7 @@ export default function History() {
         return FormatedTime;
     }
 
-    if (localStorage.getItem("moviesOnHistory").length == 0) {
+    if (moviesOnHistory.length == 0) {
         return (
             <div>
                 <Navbar />
@@ -33,7 +33,6 @@ export default function History() {
             </div>
         )
     }
-
 
     return (
         <div>
