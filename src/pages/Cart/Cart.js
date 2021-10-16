@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
+import { useHistory } from "react-router";
 import { MyContext } from "../../context/Context";
 
 import Navbar from "../../components/Navbar/Navbar";
@@ -9,8 +10,14 @@ import Button from "../../components/Button/Button";
 export default function Cart() {
     const { CartMovie, setRemoveMovie, addMovieOnHistory } = useContext(MyContext);
     const [total, setTotal] = useState(0);
+    const history = useHistory();
 
     const removeMovie = (movie) => setRemoveMovie(movie);
+
+    const buy = async() => {
+        await addMovieOnHistory();
+        history.push("/finished");
+    }
 
     useEffect(() => {
         setTotal(() => {
@@ -27,7 +34,7 @@ export default function Cart() {
             <div>
                 <Navbar />
                 <Dashboard>
-                    <h3 style={{ fontSize: "28px" }}>There is no movie in your Cart</h3>
+                    <h3 style={{ fontSize: "28px" }}>Your cart is empty</h3>
                 </Dashboard>
             </div>
         )
@@ -38,7 +45,7 @@ export default function Cart() {
             <Navbar />
             <Dashboard>
                 <h3 style={{ fontSize: "28px" }}>Total: ${total},00</h3>
-                <Button onClick={addMovieOnHistory}> BUY </Button>
+                <Button onClick={buy}> BUY </Button>
                 {
                     CartMovie.map((element) => {
                         return (

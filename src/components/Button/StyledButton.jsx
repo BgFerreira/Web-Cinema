@@ -4,7 +4,7 @@ export const ButtonDefault = styled.button`
     width: 300px;
     height: 60px;
     cursor: pointer;
-    background-color: #992200;
+    background-color: #cc2200;
     color: #111111;
     font-size: 1.3rem;
     font-weight: bold;
@@ -12,7 +12,7 @@ export const ButtonDefault = styled.button`
     border-radius: 100px;
 
     &:hover {
-        background-color: #881100;
+        background-color: #bb1100;
         transform: scale(1.05);
         box-shadow: 0 0 3px #ccc
     }
@@ -21,20 +21,17 @@ export const ButtonDefault = styled.button`
 export const StyledTrashButton = styled.button`
     position: absolute;
     top:70%;
-    left:86%;
+    left:80%;
     width: 80px;
     height: 80px;
     cursor: pointer;
-    background-color: #992200;
-    color: #111111;
-    font-size: 1.3rem;
-    font-weight: bold;
+    background-color: #cc2200;
     border: none;
     border-radius: 15px;
 
 
     &:hover {
-        background-color: #881100;
+        background-color: #bb1100;
         transform: scale(1.05);
         box-shadow: 0 0 3px #ccc
     }
@@ -48,7 +45,7 @@ export const StyledAcordionButton = styled.button`
     width: 100%;
     height: 40px;
     cursor: pointer;
-    background-color: #992200;
+    background-color: #cc2200;
     color: #111111;
     font-size: 1.3rem;
     font-weight: bold;
@@ -56,7 +53,7 @@ export const StyledAcordionButton = styled.button`
     border-radius: 10px;
 
     &:hover {
-        background-color: #881100;
+        background-color: #bb1100;
         box-shadow: 0 0 3px #ccc
     }
 `

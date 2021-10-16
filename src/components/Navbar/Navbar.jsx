@@ -1,8 +1,9 @@
 import React, { useContext } from "react";
 import { useHistory } from "react-router-dom";
 import { StyledNavbar } from "./styledNavbar";
-import { NavItem } from "./styledNavbar";
 import { MyContext } from "../../context/Context";
+
+import { NavItem } from "./styledNavbar";
 
 export default function Navbar() {
     const history = useHistory();

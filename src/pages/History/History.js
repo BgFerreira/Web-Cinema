@@ -6,13 +6,19 @@ import { Dashboard } from "../../components/Cards/Home/MovieStyled";
 
 export default function History() {
 
-    const { CartMovie, setRemoveMovie, addMovieOnHistory } = useContext(MyContext);
-    const [total, setTotal] = useState(0);
-    
-    if(false) {
-        return
+    const { addMovieOnHistory } = useContext(MyContext);
+
+    if (true) {
+        return (
+            <div>
+                <Navbar />
+                <Dashboard>
+                    <h3 style={{ fontSize: "28px" }}>You didn't make any order</h3>
+                </Dashboard>
+            </div>
+        )
     }
-    
+
     return (
         <div>
             <Navbar />
