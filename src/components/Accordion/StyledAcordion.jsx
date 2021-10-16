@@ -14,8 +14,8 @@ export const StyledAcordion = styled.div`
 `
 export const StyledInternal = styled.div`
     width: 95%;
-    max-height: ${(props) => (props.open ? '400px' : '0')};
-    transition: all 0.8s ease-in-out;
+    max-height: ${(props) => (props.open ? '9999px' : '0')};
+    transition: all 0.4s ease-in-out;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -29,4 +29,8 @@ export const StyledInternal = styled.div`
         font-size: 30px;
         margin: 15px 0;
     }
+`
+
+export const Feedback = styled.div`
+    display: ${(props) => (props.added ? 'flex' : 'none')}
 `

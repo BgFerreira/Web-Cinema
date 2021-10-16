@@ -46,8 +46,8 @@ export default function History() {
                                     element.movies.map((data) => {
                                         return (
                                            <div key={data.id}>
-                                                <span className="movieTitle">{data.title}</span>
-                                                <span className="moviePrice">${data.vote_average * 10},00</span>
+                                                <span className="movieTitle" key={data.title}>{data.title}</span>
+                                                <span className="moviePrice" key={data.id}>${data.vote_average * 10},00</span>
                                            </div>
                                         )
                                     })

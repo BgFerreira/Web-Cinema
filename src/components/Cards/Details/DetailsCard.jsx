@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { BackgroundImg, InfoDiv } from "./StyledDetailsCard";
 import { Flex } from "../../Display/Display.jsx";
 import { StarRate } from "../Home/MovieStyled";
 import Button from "../../Button/Button.jsx";
+
 
 const imgURL = "https://image.tmdb.org/t/p/w300";
 

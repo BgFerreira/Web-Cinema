@@ -11,7 +11,7 @@ export const ButtonDefault = styled.button`
     border: none;
     border-radius: 100px;
 
-    &:hover {
+    :hover {
         background-color: #bb1100;
         transform: scale(1.05);
         box-shadow: 0 0 3px #ccc

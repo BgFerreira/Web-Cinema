@@ -57,6 +57,7 @@ export default function Details() {
             <Dashboard>
                 <DetailsCard addMovie={setAddMovie} movie={movie} />
             </Dashboard>
+            
         </div>
     )
 }
