@@ -41,7 +41,7 @@ export default function History() {
                 {
                     moviesOnHistory.map((element) => {
                         return (
-                            <Acordion AcordionTitle={`Order in: ${getOrderTime(element.order)}`}>
+                            <Acordion AcordionTitle={`Ordered at: ${getOrderTime(element.order)}`}>
                                 {
                                     element.movies.map((data) => {
                                         return (
