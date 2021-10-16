@@ -17,10 +17,6 @@ export function MyProvider({ children }) {
     
     const myLogin = (data) => { 
         setUser(data);
-        localStorage.setItem("moviesOnHistory", "[]");
-        localStorage.setItem("CartMovie", "[]");
-        setMovieOnCart([]);
-        setMovieOnHistory([]);
         setAuthenticated(true);
     };
 
@@ -29,10 +25,6 @@ export function MyProvider({ children }) {
 
     const myLogout = async () => {
         setUser({ email: "", password: "" });
-        localStorage.setItem("moviesOnHistory", "[]");
-        localStorage.setItem("CartMovie", "[]");
-        setMovieOnCart([]);
-        setMovieOnHistory([]);
         setAuthenticated(false);
     }
 

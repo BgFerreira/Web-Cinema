@@ -19,6 +19,6 @@ export const NavItem = styled.p`
     cursor: pointer;
 
     :hover {
-        color: #cc2200;
+        color: #d86633;
     }
 `

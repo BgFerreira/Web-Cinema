@@ -4,7 +4,7 @@ export const ButtonDefault = styled.button`
     width: 300px;
     height: 60px;
     cursor: pointer;
-    background-color: ${(props => (props.added ? "#22cc00": "#cc2200"))};
+    background-color: ${(props => (props.added ? "#22ef70": "#d44200"))};
     color: #111111;
     font-size: 1.3rem;
     font-weight: bold;
@@ -12,7 +12,7 @@ export const ButtonDefault = styled.button`
     border-radius: 100px;
 
     :hover {
-        background-color: ${(props => (props.added ? "#11bb00": "#bb1100"))};
+        background-color: ${(props => (props.added ? "#47eb85": "#d86633"))};
         transform: scale(1.05);
         box-shadow: 0 0 3px #ccc
     }
@@ -25,13 +25,13 @@ export const StyledTrashButton = styled.button`
     width: 80px;
     height: 80px;
     cursor: pointer;
-    background-color: #cc2200;
+    background-color: #d44200;
     border: none;
     border-radius: 15px;
 
 
     &:hover {
-        background-color: #bb1100;
+        background-color: #d86633;
         transform: scale(1.05);
         box-shadow: 0 0 3px #ccc
     }
@@ -47,7 +47,7 @@ export const StyledAcordionButton = styled.div`
     width: 98%;
     height: 40px;
     cursor: pointer;
-    background-color: #cc2200;
+    background-color: #d44200;
     color: #111111;
     font-size: 1.3rem;
     font-weight: bold;
@@ -56,7 +56,7 @@ export const StyledAcordionButton = styled.div`
     padding: 10px;
 
     &:hover {
-        background-color: #bb1100;
+        background-color: #d86633;
         box-shadow: 0 0 3px #ccc
     }
 `
